@@ -1,9 +1,14 @@
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="bg-black text-white">
-      <h2>Home Page</h2>
-
-    </div>
+   <>
+   <div>
+   <h2>This is Home Page</h2>
+   <p>Recent Snippets</p>
+   </div>
+  
+   </>
+    
   );
 }
