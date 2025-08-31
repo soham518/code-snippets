@@ -6,7 +6,8 @@ import { Textarea } from '@/components/ui/textarea'
 import { prisma } from '@/lib/prisma'
 import { redirect } from 'next/navigation'
 const page = () => {
-     async function createSnippet(formData:FormData){
+
+    async function createSnippet(formData:FormData){
     "use server" //use server directive
     const title = formData.get("title") as string;
     const code = formData.get("code") as string;
