@@ -4,7 +4,11 @@ import Link from "next/link";
 
 export default async function Home() {
   const snippets = await prisma.snippet.findMany();
-
+  //there are 2 methods of caching using Full Route Cache:
+  //1.
+  const dynamic = "force-dynamic"; //disabling caching features -> it is now a dynamic rout.(dynamic routs dont have caching)
+  //2.
+  //export const revalidate = 0; 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6">
       {/* Page Header */}
