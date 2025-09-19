@@ -1,18 +1,25 @@
-import React from 'react'
-import { prisma } from '@/lib/prisma';
-import EditSnippetForm from '@/components/EditSnippetForm'
-const EditPageSnippit = async({params}:{params:Promise<{id:string}>}) => {
-    const id = parseInt((await params).id);
-    const snippet = await prisma.snippet.findUnique({
-        where:{
-            id,
-        }
-    })
+import EditSnippetForm from "@/components/EditSnippetForm";
+import { prisma } from "@/lib/prisma";
+const EditPageSnippit = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const id = parseInt((await params).id);
+  const snippet = await prisma.snippet.findUnique({
+    where: {
+      id,
+    },
+  });
   return (
     <>
-    {/* <EditSnippetForm snippet ={snippet}></EditSnippetForm> */}
+      <div>
+        <h2>Edit page snippet</h2>
+        {id}
+      </div>
+      {snippet && <EditSnippetForm snippet={snippet} />}
     </>
-  )
-}
+  );
+};
 
-export default EditPageSnippit
+export default EditPageSnippit;
