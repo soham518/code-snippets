@@ -1,5 +1,6 @@
 import EditSnippetForm from "@/components/EditSnippetForm";
 import { prisma } from "@/lib/prisma";
+
 const EditPageSnippit = async ({
   params,
 }: {
