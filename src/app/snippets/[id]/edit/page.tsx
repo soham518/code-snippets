@@ -15,7 +15,7 @@ const EditPageSnippit = async ({
     <>
       <div>
         <h2>Edit page snippet</h2>
-        {id}
+        <h2 className="font-bold m-5 text-2xl">{snippet?.title}</h2>
       </div>
       {snippet && <EditSnippetForm snippet={snippet} />}
     </>
