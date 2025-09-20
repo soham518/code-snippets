@@ -4,9 +4,9 @@ import { prisma } from "@/lib/prisma";
 const EditPageSnippit = async ({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) => {
-  const id = parseInt((await params).id);
+  const id = parseInt((params).id);
   const snippet = await prisma.snippet.findUnique({
     where: {
       id,
